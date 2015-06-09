@@ -1,0 +1,15 @@
+APRO v4.05
+Compiler : Unknown
+Operating System : Windows XP 5.1 Service Pack 1
+Device: COM3
+Date/time: 27/05/04, 11:01:16
+Time      Type      SubType       Data      OtherData
+--------  --------  ------------  --------  ---------
+0000.004  TrDatChg  Avail         00000001  
+0000.004  TrgHdAlc  Window        002302C8  
+0000.733  TrgHdAlc  Method        00000000  
+0045.623  Dispatch  WriteCom      00000001  a
+0221.225  Dispatch  WriteCom      00000003  atz
+0226.095  Dispatch  WriteCom      00000003  ATZ
+0228.684  Dispatch  WriteCom      00000003  ATZ
+0230.936  Dispatch  WriteCom      00000003  ATZ

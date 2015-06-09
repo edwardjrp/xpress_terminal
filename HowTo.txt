@@ -1,0 +1,42 @@
+* El micro recibe constantemente a 9600 bps y transmite a la velocidad indicada)
+* La secuencia de caracteres que enviara el software al hardware para indicarle que cambie de un
+  router a otro sera asi:
+
+`^`^(no. del router a seleccionar)
+alt+96(HEX 60) alt+94(HEX5E) alt+96(HEX 60) alt+94(HEX5E) (no. del router)
+
+Ej.: `^`^1
+
+los routers van del 1 al 8 para el equipo de 8 puertos
+
+para indicar la seleccion simultanea se debe enviar asi:
+
+`^`^9
+
+para indicar que los seleccione a todos, se debe indicar asi:
+
+`^`^A
+
+Para comprobar si el software es de la caja, el aparato le envia los siguientes caracteres:
+`^`^  para indicarle al software que mande su codigo.
+
+El codigo que enviara el software es 1111
+
+Cuando la caja reciba el codigo, entonces enviara los siguientes caracteres indicando que si hay correspondencia: ^`^`
+
+1= 31HEX  2= 32HEX  3= 33HEX 4= 34HEX 5= 35HEX 6= 36HEX 7= 37HEX 8= 38HEX 9= 39HEX A= 41HEX
+
+ENVIAR DATOS CADA 15ms
+
+`^`^1 : Cambia o quita el puerto 1
+`^`^2 : Cambia o quita el puerto 2
+`^`^3 : Cambia o quita el puerto 3
+`^`^4 : Cambia o quita el puerto 4
+`^`^5 : Cambia o quita el puerto 5
+`^`^6 : Cambia o quita el puerto 6
+`^`^7 : Cambia o quita el puerto 7
+`^`^8 : Cambia o quita el puerto 8
+`^`^9 : Entra o sale del modo simultaneo.
+`^`^A : Selecciona o deselecciona todos los puertos.
+`^`^0 : Indica al aparato que inicie proceso de autenticacion
+`^`^B : Desautentica al aparato.

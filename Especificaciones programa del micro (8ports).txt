@@ -1,0 +1,45 @@
+* El micro recibe y transmite constantemente a 9600 bps.
+* La secuencia de caracteres que enviara el software al hardware para indicarle que cambie de un
+  router a otro sera asi:
+
+Router 1: (alt+028 alt+020 alt+028 alt+020) alt+001
+Router 2: (alt+028 alt+020 alt+028 alt+020) alt+002
+Router 3: (alt+028 alt+020 alt+028 alt+020) alt+003
+Router 4: (alt+028 alt+020 alt+028 alt+020) alt+004
+Router 5: (alt+028 alt+020 alt+028 alt+020) alt+005
+Router 6: (alt+028 alt+020 alt+028 alt+020) alt+006
+Router 7: (alt+028 alt+020 alt+028 alt+020) alt+007
+Router 8: (alt+028 alt+020 alt+028 alt+020) alt+008
+Router 9: (alt+028 alt+020 alt+028 alt+020) alt+009
+Router 10: (alt+028 alt+020 alt+028 alt+020) alt+010
+Router 11: (alt+028 alt+020 alt+028 alt+020) alt+011
+Router 12: (alt+028 alt+020 alt+028 alt+020) alt+012
+Simultaneous Mode: (alt+028 alt+020 alt+028 alt+020) alt+022
+Select All: (alt+028 alt+020 alt+028 alt+020) alt+029
+Iniciar proceso para Determinacion de Modelo: (alt+028 alt+020 alt+028 alt+020) alt+030
+Desactivar el Equipo: (alt+028 alt+020 alt+028 alt+020) alt+31
+
+- Cuando se presiona Right Arrow, el programa envia alt+017 al equipo
+- Cuando se presiona Left Arrow, el programa envia alt+018 al equipo
+- Cuando se presiona Up Arrow, el programa envia alt+016 al equipo
+- Cuando se presiona Down Arrow, el programa envia alt+014 al equipo
+
+**El proceso para Determinacion de Modelo inicia de esta manera:
+
+1- Software le manda al equipo el codigo: alt+028 alt+020 alt+028 alt+020 alt+030
+
+2- El equipo le responde con este codigo: alt+028 alt+020 alt+028 alt+020
+
+3- El software le responde indicando que ya recibio la informacion: alt+25 alt+19 alt+31 alt+11
+
+4- El equipo le responde indicandole el modelo del equipo: 
+
+2 Puertos: alt+020 alt+020 alt+028 alt+028
+
+4 Puertos: alt+020 alt+028 alt+028 alt+020
+
+8 Puertos: alt+020 alt+028 alt+020 alt+028
+
+12 Puertos: alt+028 alt+020 alt+020 alt+028
+
+NOTA: Estos comandos solamente funcionan para el modo por Software.

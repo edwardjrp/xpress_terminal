@@ -1,0 +1,88 @@
+unit TerminalSettings;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, SUIButton, LMDCustomControl, LMDCustomPanel,
+  LMDCustomBevelPanel, LMDBaseEdit, LMDCustomEdit, LMDCustomMaskEdit,
+  LMDMaskEdit, StdCtrls, LMDCustomComboBox, LMDComboBox, OoMisc, ADTrmEmu,
+  ExtCtrls;
+
+type
+  TfrmSettings = class(TForm)
+    lbColumns: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
+    cbCursorType: TLMDComboBox;
+    edColumns: TLMDMaskEdit;
+    edRows: TLMDMaskEdit;
+    btClose: TsuiButton;
+    Label3: TLabel;
+    ColorBox: TColorBox;
+    procedure btCloseClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btCloseKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Procedure setSettings(Terminal : TAdTerminal);
+  end;
+
+var
+  frmSettings: TfrmSettings;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrmSettings }
+
+Procedure TfrmSettings.setSettings(Terminal: TAdTerminal);
+Begin
+With Terminal Do
+  Begin
+    If edColumns.AsInteger > 0 Then
+      Columns := edColumns.AsInteger
+    Else
+      Columns := 87; {Default terminal columns}
+
+    If edRows.AsInteger > 0 Then
+      Rows := edRows.AsInteger
+    Else
+      Rows := 32; {Default terminal rows}
+
+    Case cbCursorType.ItemIndex Of
+      0 : CursorType := ctBlock;
+      1 : CursorType := ctUnderline;
+      2 : CursorType := ctNone;
+    End; {End-case}
+    Color := ColorBox.Selected;
+  End;
+End;
+
+procedure TfrmSettings.btCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmSettings.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+Case Key Of
+  13 : PostMessage(Handle,WM_NEXTDLGCTL,0,0);
+  27 : btCloseClick(Self);
+End; {End-Case}
+end;
+
+procedure TfrmSettings.btCloseKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+If Key = 13 Then
+  Close;
+end;
+
+end.
