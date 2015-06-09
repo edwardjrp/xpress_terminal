@@ -1,5 +1,5 @@
 # XpressTerminal
-![](http://www.trademarkia.com/logo-images/iamc/xpress-terminal-78569252.jpg)
+![XT Logo](http://www.trademarkia.com/logo-images/iamc/xpress-terminal-78569252.jpg)
 
 ### Overview
 Active equipment manager capable of administering any network or RS-232/USB connected equipment including but not limited to network devices, routers, switches , security systems comprised of electrical condition monitors, physical condition monitors, motion detectors, video cameras, bandwidth optimizers, computer hardware network racks and computer software for firewall and content management purposes; computer hardware, namely, console managers; computer hardware and software for use in network analysis, for network troubleshooting, for managing active devices, namely, controlling electrical condition monitors, physical condition monitors, motion detection.
